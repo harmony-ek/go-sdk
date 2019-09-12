@@ -76,6 +76,8 @@ func (C *Controller) verifyBalance(amount float64) {
 		return
 	}
 
+	fmt.Println(C.sender.account.Address.String())
+
 	balanceRPCReply, err := C.messenger.SendRPC(
 		rpc.Method.GetBalance,
 		p{address.ToBech32(C.sender.account.Address), "latest"},

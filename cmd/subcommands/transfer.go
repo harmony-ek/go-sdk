@@ -46,8 +46,11 @@ Create a transaction, sign it, and send off to the Harmony blockchain
 			networkHandler := handlerForShard(fromShardID, node)
 			ks := store.FromAccountName(accountName)
 			sender := address.Parse(fromAddress)
-			account, _ := ks.Find(accounts.Account{Address: sender})
-			ks.Unlock(account, common.DefaultPassphrase)
+			account, findingAccount := ks.Find(accounts.Account{Address: sender})
+			fmt.Println(findingAccount)
+			// ks.Unlock(account, common.DefaultPassphrase)
+
+			ks.Unlock(account, "")
 			fromCmdLineFlags := func(ctlr *transaction.Controller) {
 				//
 			}
