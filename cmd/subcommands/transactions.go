@@ -25,7 +25,7 @@ func init() {
 		"passphrase to unlock sender's keystore",
 	)
 
-	cmdTransaction.AddCommand(ShardTransactionCommand)
-	cmdTransaction.AddCommand(StakingTransactionCommand)
+	cmdTransaction.AddCommand(shardTransactionCommand)
+	cmdTransaction.AddCommand(stakingTransactionCommand)
 	RootCmd.AddCommand(cmdTransaction)
 }

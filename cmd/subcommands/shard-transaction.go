@@ -13,7 +13,7 @@ import (
 )
 
 var (
-	ShardTransactionCommand *cobra.Command
+	shardTransactionCommand *cobra.Command
 
 	dryRun      bool
 	fromAddress oneAddress
@@ -107,5 +107,5 @@ func init() {
 	for _, flagName := range [...]string{"from", "to", "amount", "from-shard", "to-shard"} {
 		rootShardTxnCmd.MarkFlagRequired(flagName)
 	}
-	ShardTransactionCommand = rootShardTxnCmd
+	shardTransactionCommand = rootShardTxnCmd
 }

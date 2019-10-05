@@ -6,7 +6,7 @@ import (
 )
 
 var (
-	StakingTransactionCommand *cobra.Command
+	stakingTransactionCommand *cobra.Command
 )
 
 func init() {
@@ -20,5 +20,5 @@ func init() {
 		},
 	}
 
-	StakingTransactionCommand = rootStakingTxnCmd
+	stakingTransactionCommand = rootStakingTxnCmd
 }
