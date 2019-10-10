@@ -10,7 +10,9 @@ require (
 	github.com/elastic/gosigar v0.10.5 // indirect
 	github.com/ethereum/go-ethereum v1.8.27
 	github.com/fatih/color v1.7.0
-	github.com/harmony-one/harmony v0.0.0-20190910224338-d385233a2a70
+	github.com/harmony-one/bls v0.0.5
+	github.com/harmony-one/harmony v0.0.0-20191009213000-a7c04bfc4b8e
+	github.com/harmony-one/vdf v1.0.0 // indirect
 	github.com/karalabe/hid v1.0.0
 	github.com/mitchellh/go-homedir v1.1.0
 	github.com/pkg/errors v0.8.1

@@ -74,7 +74,7 @@ func init() {
 				ctrlr = transaction.NewController(networkHandler, ks, acct, *chainName.chainID, opts)
 			}
 
-			if transactionFailure := ctrlr.ExecuteTransaction(
+			if transactionFailure := ctrlr.ExecuteShardingTransaction(
 				toAddress.String(),
 				"",
 				amount, gasPrice,
