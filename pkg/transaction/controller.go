@@ -141,6 +141,19 @@ func (C *Controller) sendSignedTx() {
 	C.transactionForRPC.receiptHash = &r
 }
 
+func (C *Controller) sendSignedStakingTx() {
+	if C.failure != nil || C.Behavior.DryRun {
+		return
+	}
+	reply, err := C.messenger.SendRPC(rpc.Method.SendRawStakingTransaction, p{C.transactionForRPC.signature})
+	if err != nil {
+		C.failure = err
+		return
+	}
+	r, _ := reply["result"].(string)
+	C.transactionForRPC.receiptHash = &r
+}
+
 func (C *Controller) setIntrinsicGas(rawInput string) {
 	if C.failure != nil {
 		return
@@ -468,7 +481,7 @@ func (C *Controller) ExecuteDelegateTransaction (
 	C.setNextNonce()
 	C.setNewStakingTransaction(gasPrice)
 	C.signAndPrepareStakingTxEncodedForSending()
-	C.sendSignedTx()
+	C.sendSignedStakingTx()
 	C.txConfirmation()
 	return C.failure
 }

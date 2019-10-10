@@ -29,6 +29,7 @@ type rpcEnumList struct {
 	GetTransactionCount                 method
 	SendTransaction                     method
 	SendRawTransaction                  method
+	SendRawStakingTransaction 					method
 	Subscribe                           method
 	GetPastLogs                         method
 	GetWork                             method
@@ -69,6 +70,7 @@ var Method = rpcEnumList{
 	GetTransactionCount:                 "hmy_getTransactionCount",
 	SendTransaction:                     "hmy_sendTransaction",
 	SendRawTransaction:                  "hmy_sendRawTransaction",
+	SendRawStakingTransaction:					 "hmy_sendRawStakingTransaction",
 	Subscribe:                           "hmy_subscribe",
 	GetPastLogs:                         "hmy_getLogs",
 	GetWork:                             "hmy_getWork",
